@@ -18,7 +18,7 @@ try:
         raise
 
     imapSession.select('[Gmail]/All Mail')
-    typ, data = imapSession.search(None, 'ALL')
+    typ, data = imapSession.search(None, '(FROM "no-reply@sipsvc.com")')
     if typ != 'OK':
         print 'Error searching Inbox.'
         raise
